@@ -1,34 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <script src="https://kit.fontawesome.com/5e9b2971de.js" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HELP ESQUECE - TERMOS</title>
-
+  <title>Service Desk - TERMOS</title>
+<link rel="icon" href="img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
 
-  <h1>HELP ESQUECE - TERMOS</h1>
+  <img src="img/banco-pine.png" alt="logo" class="imglogo">
+
+  <h1>SERVICE DESK - TERMOS</h1>
 
   <div class="formulario">
 
+<div class="input-box">
+
+    <i class="fa-solid fa-calendar-days"></i>
+
     <input type="date" id="data">
+
+</div>
+
+<div class="input-box">
+
+    <i class="fa-solid fa-user"></i>
 
     <input type="text" id="nome" placeholder="Nome">
 
+</div>
+
+<div class="input-box">
+
+    <i class="fa-solid fa-keyboard"></i>
+
     <input type="text" id="snteclado" placeholder="SN Teclado">
+
+</div>
+
+<div class="input-box">
+
+    <i class="fa-solid fa-headset"></i>
 
     <input type="text" id="snheadset" placeholder="SN Headset">
 
+</div>
+
+<div class="input-box">
+
+    <i class="fa-solid fa-laptop"></i>
+
     <input type="text" id="snote" placeholder="SN Notebook">
+
+</div>
+
+<div class="input-box">
+
+    <i class="fa-solid fa-id-card"></i>
 
     <input type="text" id="cpf" placeholder="CPF">
 
+</div>
+   
     <button onclick="gerarPDF()">
+     <i class="fa-solid fa-file-pdf"></i>
+
       Gerar PDF
+      
     </button>
 
   </div>
