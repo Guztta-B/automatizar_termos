@@ -8,7 +8,7 @@ async function gerarPDF() {
     cpf: document.getElementById("cpf").value
   };
 
-  const resposta = await fetch("https://termos-1gbi.onrender.com/gerar", {
+ const resposta = await fetch("http://localhost:3000/gerar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
