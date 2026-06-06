@@ -11,7 +11,6 @@ app.use(express.json());
 
 app.post("/gerar", async (req, res) => {
   try {
-
     const {
       data,
       nome,
@@ -19,37 +18,55 @@ app.post("/gerar", async (req, res) => {
       snteclado,
       snheadset,
       snote
-    } = req.body; 
+    } = req.body;
+
 
     let dataBR = "";
 
 if (data) {
   const partes = data.split("-");
-  dataBR = `${partes[2]}/${partes[1]}/${partes[0]}`;
+
+  const ano = partes[0];
+  const mes = partes[1];
+  const dia = partes[2];
+
+  const meses = {
+    "01": "janeiro",
+    "02": "fevereiro",
+    "03": "março",
+    "04": "abril",
+    "05": "maio",
+    "06": "junho",
+    "07": "julho",
+    "08": "agosto",
+    "09": "setembro",
+    "10": "outubro",
+    "11": "novembro",
+    "12": "dezembro"
+  };
+
+  dataBR = `${dia} de ${meses[mes]} de ${ano}`;
 }
 
     // CAMINHO DO PDF
     const caminhoPDF = path.join(__dirname, "assets", "Termo_Final.pdf");
+
     // LÊ PDF
     const pdfBytes = fs.readFileSync(caminhoPDF);
 
     // ABRE PDF
     const pdfDoc = await PDFDocument.load(pdfBytes);
 
-    // PEGA PRIMEIRA PAGINA
+    // PEGA AS PÁGINAS
     const pages = pdfDoc.getPages();
     const page = pages[0];
-
-    // TAMANHO DA PAGINA
-    console.log(page.getWidth());
-    console.log(page.getHeight());
+    const page2 = pages[1];
 
     // FONTE
-   const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+    const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
 
-    // FUNÇÃO ESCREVER
+    // FUNÇÃO ESCREVER NA PÁGINA 1
     function escrever(texto, x, y, size = 10) {
-
       page.drawText(texto || "", {
         x,
         y,
@@ -57,47 +74,48 @@ if (data) {
         font,
         color: rgb(0, 0, 0)
       });
-
     }
 
-// PÁGINA 1
-escrever(dataBR, 100, 502, 12);
+    // DATA
+page.drawText(dataBR || "", {
+      x: 95,
+      y: 503,
+      size: 10,
+      font,
+      color: rgb(0, 0, 0)
+    });
+    // NOME
+    escrever(nome, 205, 415, 12);
 
-// NOME
-escrever(nome, 205, 415, 12);
+    // CPF
+    escrever(cpf, 170, 401, 12);
 
-// CPF
-escrever(cpf, 170, 401,12);
+    // NOTEBOOK
+    page.drawText(snote || "", {
+      x: 662,
+      y: 474.5,
+      size: 9,
+      font,
+      color: rgb(0.18, 0.45, 0.71)
+    });
 
-// NOTEBOOK
-page.drawText(snote || "", { 
-  x: 662,
-  y: 474.5,
-  size: 9,
-  font,
-  color: rgb(0.18, 0.45, 0.71)
-});
+    // TECLADO
+    page.drawText(snteclado || "", {
+      x: 635,
+      y: 89,
+      size: 9,
+      font,
+      color: rgb(0.18, 0.45, 0.71)
+    });
 
-// TECLADO
-page.drawText(snteclado || "" , { 
-  x: 635,
-  y: 89,
-  size: 9,
-  font,
-  color: rgb(0.18, 0.45, 0.71)
-});
-
-
-// headset
-const page2 = pages[1];
-
-page2.drawText(snheadset || "", {
-  x: 224,
-  y: 472,
-  size: 9,
-  font,
-  color: rgb(0.18, 0.45, 0.71)
-});
+    // HEADSET - PÁGINA 2
+    page2.drawText(snheadset || "", {
+      x: 224,
+      y: 472,
+      size: 9,
+      font,
+      color: rgb(0.18, 0.45, 0.71)
+    });
 
     // PDF FINAL
     const pdfFinal = await pdfDoc.save();
@@ -112,10 +130,8 @@ page2.drawText(snheadset || "", {
     res.send(Buffer.from(pdfFinal));
 
   } catch (erro) {
-
     console.error(erro);
     res.status(500).send("Erro ao gerar PDF");
-
   }
 });
 
