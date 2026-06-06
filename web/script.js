@@ -5,10 +5,16 @@ async function gerarPDF() {
     snteclado: document.getElementById("snteclado").value,
     snheadset: document.getElementById("snheadset").value,
     snote: document.getElementById("snote").value,
-    cpf: document.getElementById("cpf").value
+    cpf: document.getElementById("cpf").value,
+
+  emailColaborador:
+document.getElementById("emailColaborador").value,
+
+emailResponsavel:
+document.getElementById("emailResponsavel").value,
   };
 
- const resposta = await fetch("https://termos-1gbi.onrender.com/gerar", {
+  const resposta = await fetch("https://termos-1gbi.onrender.com/gerar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -24,3 +30,25 @@ async function gerarPDF() {
   a.download = "termo.pdf";
   a.click();
 }
+const checkboxEmail = document.getElementById("enviarEmail");
+const boxEmail = document.getElementById("boxEmail");
+const boxEmailResponsavel = document.getElementById("boxEmailResponsavel");
+
+checkboxEmail.addEventListener("change", () => {
+
+  if (checkboxEmail.checked) {
+
+    boxEmail.style.display = "flex";
+    boxEmailResponsavel.style.display = "flex";
+
+  } else {
+
+    boxEmail.style.display = "none";
+    boxEmailResponsavel.style.display = "none";
+
+    document.getElementById("emailColaborador").value = "";
+    document.getElementById("emailResponsavel").value = "";
+
+  }
+
+});

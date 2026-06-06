@@ -194,6 +194,8 @@ button:hover{
     padding:0 15px;
 
     height:55px;
+
+
 }
 
 .input-box{
@@ -214,12 +216,12 @@ button:hover{
 }
 
 .input-box i{
-
-    color:#7b1f2a;
-
-    font-size:18px;
-
-    margin-right:12px;
+position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5c1020;
+    font-size: 18px;
 }
 
 .input-box input{
@@ -234,5 +236,72 @@ button:hover{
     font-size:16px;
 
     background:transparent;
+
+    
+    width: 100%;
+    padding: 15px 15px 15px 45px;
 }
 
+.email-area {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.checkbox-email {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-email input {
+  width: 18px;
+  height: 18px;
+  accent-color: #000000;
+  cursor: pointer;
+}
+
+.email-hidden {
+  display: none;
+  margin-top: 12px;
+  animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.email-hidden {
+    display: none;
+}
+
+.checkbox-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.checkbox-box input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #ffffff;
+}
+
+.checkbox-box label {
+    cursor: pointer;
+}
