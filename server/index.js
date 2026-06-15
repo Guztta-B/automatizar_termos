@@ -91,8 +91,9 @@ page.drawText(dataBR || "", {
     escrever(cpf, 170, 401, 12);
 
     // NOTEBOOK
+     // alterei posição x caso o erro seja isso voltar para 662
     page.drawText(snote || "", {
-      x: 662,
+      x: 664,
       y: 474.5,
       size: 9,
       font,
