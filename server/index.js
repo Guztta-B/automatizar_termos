@@ -93,7 +93,7 @@ page.drawText(dataBR || "", {
     // NOTEBOOK
      // alterei posição x caso o erro seja isso voltar para 662
     page.drawText(snote || "", {
-      x: 664,
+      x: 663.5,
       y: 474.5,
       size: 9,
       font,
