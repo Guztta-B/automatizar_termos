@@ -17,6 +17,7 @@ app.post("/gerar", async (req, res) => {
       cpf,
       snteclado,
       snheadset,
+      smonitor,
       snote
     } = req.body;
 
@@ -87,9 +88,13 @@ page.drawText(dataBR || "", {
     // NOME
     escrever(nome, 205, 415, 12);
 
-    // CPF
-    escrever(cpf, 170, 401, 12);
+//MONITOR
+escrever(smonitor, 171, 401, 12);
+    
 
+// CPF
+    escrever(cpf, 170, 401, 12);
+    
     // NOTEBOOK
      // alterei posição x caso o erro seja isso voltar para 662
     page.drawText(snote || "", {

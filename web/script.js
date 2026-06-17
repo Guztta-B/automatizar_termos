@@ -6,6 +6,7 @@ async function gerarPDF() {
     snheadset: document.getElementById("snheadset").value,
     snote: document.getElementById("snote").value,
     cpf: document.getElementById("cpf").value,
+    smonitor: document.getElementById("smonitor").value,
 
   emailColaborador:
 document.getElementById("emailColaborador").value,
@@ -14,6 +15,9 @@ emailResponsavel:
 document.getElementById("emailResponsavel").value,
   };
 
+    //Aqui deve estar: https://termos-1gbi.onrender.com/gerar 
+    //Para conectar servidor final, em caso de testes colocar
+    //http://localhost:3000/gerar
   const resposta = await fetch("https://termos-1gbi.onrender.com/gerar", {
     method: "POST",
     headers: {
