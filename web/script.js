@@ -6,19 +6,17 @@ async function gerarPDF() {
     snheadset: document.getElementById("snheadset").value,
     snote: document.getElementById("snote").value,
     cpf: document.getElementById("cpf").value,
-    smonitor: document.getElementById("smonitor").value,
-
-  emailColaborador:
-document.getElementById("emailColaborador").value,
-
-emailResponsavel:
-document.getElementById("emailResponsavel").value,
+    smonitor: document.getElementById("smonitor").value, //caso de B.O esse email estava diferente, email e depois quera paragrafo
+    emailColaborador:document.getElementById("emailColaborador").value,
+    emailResponsavel:document.getElementById("emailResponsavel").value,
+     monitor_sim: document.querySelector('input[name="monitor_sim"]:checked')?.value || " ",
+    headset_simounao: document.querySelector('input[name="headset_simounao"]:checked')?.value || "",
   };
 
     //Aqui deve estar: https://termos-1gbi.onrender.com/gerar 
     //Para conectar servidor final, em caso de testes coloca
     //http://localhost:3000/gerar
-  const resposta = await fetch("https://termos-1gbi.onrender.com/gerar", {
+  const resposta = await fetch("http://localhost:3000/gerar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

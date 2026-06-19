@@ -305,3 +305,27 @@ position: absolute;
 .checkbox-box label {
     cursor: pointer;
 }
+
+/* Botao de sim ou nao */
+.toggle-group input[type="radio"] { display: none; }
+
+.toggle-group label {
+  cursor: pointer;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1.5px solid #ccc;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.toggle-group input[value="sim"]:checked + label {
+  background: #e8f5e9;
+  border-color: #2ecc71;
+  color: #1a7a3a;
+}
+
+.toggle-group input[value="nao"]:checked + label {
+  background: #fdecea;
+  border-color: #e74c3c;
+  color: #c0392b;
+}

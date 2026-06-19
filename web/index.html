@@ -39,21 +39,16 @@
 
 </div>
 
-<div class="input-box">
-
-    <i class="fa-solid fa-keyboard"></i>
-
-    <input type="text" id="snteclado" placeholder="SN Teclado">
-
-</div>
 
 <div class="input-box">
 
-    <i class="fa-solid fa-headset"></i>
+    <i class="fa-solid fa-id-card"></i>
 
-    <input type="text" id="snheadset" placeholder="SN Headset">
+    <input type="text" id="cpf" placeholder="CPF">
 
 </div>
+
+
 
 <div class="input-box">
 
@@ -63,6 +58,41 @@
 
 </div>
 
+
+<div class="input-box">
+
+    <i class="fa-solid fa-keyboard"></i>
+
+    <input type="text" id="snteclado" placeholder="SN Teclado">
+
+</div>
+<!-- SELECIONAR SE VAI OU NAO OS EQUIPAMENTOS -->
+ <div class="toggle-group">
+    <input type="radio" name="recebe_teclado" id="teclado_sim" value="sim" />
+    <label for="teclado_sim">Sim</label>
+
+    <input type="radio" name="recebe_teclado" id="teclado_nao" value="nao" />
+    <label for="teclado_nao">Não</label>
+  </div>
+
+<div class="input-box">
+
+    <i class="fa-solid fa-headset"></i>
+
+    <input type="text" id="snheadset" placeholder="SN Headset">
+
+</div>
+
+<div class="toggle-group" id="headset_simounao">
+    <input type="radio" name="recebe_headset" id="headset_sim" value="sim" />
+    <label for="headset_sim">Sim</label>
+
+<input type="radio" name="recebe_headset" id="headset_nao" value="nao" />
+    <label for="headset_nao">Não</label>
+
+</div>
+
+
 <div class="input-box">
 
 <i class="fa-solid fa-desktop"></i>
@@ -71,13 +101,16 @@
 
 </div>
 
-<div class="input-box">
 
-    <i class="fa-solid fa-id-card"></i>
+ <div class="toggle-group">
+    <input type="radio" name="recebe_monitor" id="monitor_sim" value="sim" />
+    <label for="monitor_sim">Sim</label>
 
-    <input type="text" id="cpf" placeholder="CPF">
+    <input type="radio" name="recebe_monitor" id="monitor_nao" value="nao" />
+    <label for="monitor_nao">Não</label>
+  </div>
 
-</div>
+
 <div class="checkbox-box">
 
     <input type="checkbox" id="enviarEmail">
