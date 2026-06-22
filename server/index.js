@@ -53,7 +53,7 @@ if (data) {
 }
 
     // CAMINHO DO PDF
-    const caminhoPDF = path.join(__dirname, "assets", "Termo_Final.pdf");
+    const caminhoPDF = path.join(__dirname, "assets", "termo final.pdf");
 
     // LÊ PDF
     const pdfBytes = fs.readFileSync(caminhoPDF);
@@ -93,8 +93,13 @@ page.drawText(dataBR || "", {
     escrever(nome, 205, 415, 12);
 
 //MONITOR
-escrever(smonitor, 171, 401, 12);
-    
+    page2.drawText(smonitor || "", {
+      x: 230,
+      y: 333.5,
+      size: 9,
+      font,
+      color: rgb(0.18, 0.45, 0.71)
+    });
 
 // CPF
     escrever(cpf, 170, 401, 12);
