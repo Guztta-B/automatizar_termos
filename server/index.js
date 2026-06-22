@@ -79,8 +79,27 @@ if (data) {
         color: rgb(0, 0, 0)
       });
     }
-//teste do sim ou nao para headset
+//Configuração do sim ou nao no caso X 
+function desenharX(
+  pagina,
+  x,
+  y,
+  cor = rgb(0.75, 0.22, 0.17)
+) {
+  pagina.drawLine({
+    start: { x, y },
+    end: { x: x + 12, y: y + 12 },
+    color: cor,
+    thickness: 1.5
+  });
 
+  pagina.drawLine({
+    start: { x: x + 12, y },
+    end: { x, y: y + 12 },
+    color: cor,
+    thickness: 1.5
+  });
+}
     // DATA
 page.drawText(dataBR || "", {
       x: 95,
@@ -133,39 +152,26 @@ page.drawText(dataBR || "", {
     });
 
 //POSIÇÂO X DO HEADSET
- if (headset_simounao === "sim") {
-  page.drawLine({
-    start: { x: 95, y: 503 },
-    end:   { x: 107, y: 515 },
-    color: rgb(0.75, 0.29, 0.14),
-    thickness: 1.5,
-  });
-  page.drawLine({
-    start: { x: 107, y: 503 },
-    end:   { x: 95, y: 515 },
-    color: rgb(0.75, 0.22, 0.17),
-    thickness: 1.5,
-  });
+if (headset_simounao === "sim") {
+  desenharX(page2, 300, 470, rgb(0.18, 0.45, 0.71));
 } else {
-  page.drawLine({
-    start: { x: 140, y: 503 },
-    end:   { x: 152, y: 515 },
-    color: rgb(0.75, 0.22, 0.17),
-    thickness: 1.5,
-  });
-  page.drawLine({
-    start: { x: 152, y: 503 },
-    end:   { x: 140, y: 515 },
-    color: rgb(0.75, 0.22, 0.17),
-    thickness: 1.5,
-  });
+  desenharX(page2, 350, 470, rgb(0.18, 0.45, 0.71));
 }
-//POSIÇÂO X DO MONITOR
 
-
-
+// POSIÇÂO X DO MONITOR 
+if (monitor_sim === "sim") {
+  desenharX(page2, 300, 330, rgb(0.18, 0.45, 0.71));
+} else {
+  desenharX(page2, 350, 330, rgb(0.18, 0.45, 0.71));
+}
 
 //POSIÇÂO X DO TECLADO
+if (req.body.recebe_teclado === "sim") {
+  desenharX(page, 650, 90,rgb(0.18, 0.45, 0.71));
+} else {
+  desenharX(page, 700, 90,rgb(0.18, 0.45, 0.71));
+}
+//POSIÇÂO X DO MONITOR
 
     // PDF FINAL
     const pdfFinal = await pdfDoc.save();

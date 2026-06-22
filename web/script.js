@@ -10,8 +10,8 @@ async function gerarPDF() {
     emailColaborador:document.getElementById("emailColaborador").value,
     emailResponsavel:document.getElementById("emailResponsavel").value,
      monitor_sim: document.querySelector('input[name="monitor_sim"]:checked')?.value || " ",
-    headset_simounao: document.querySelector('input[name="headset_simounao"]:checked')?.value || "",
-  };
+    headset_simounao: document.querySelector('input[name="recebe_headset"]:checked')?.value || "", //mudei o headset_simounao para recebe_headset
+      };
 
     //Aqui deve estar: https://termos-1gbi.onrender.com/gerar 
     //Para conectar servidor final, em caso de testes coloca
