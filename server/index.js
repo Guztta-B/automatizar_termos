@@ -163,9 +163,9 @@ page.drawText(dataBR || "", {
 
 // HEADSET x
 if (headset_simounao === "sim") {
-  desenharX(page2, 300, 470, rgb(0.18, 0.45, 0.71));
+  desenharX(page2, 221.3, 514.5, rgb(0.18, 0.45, 0.71), 6.5);
 } else if (headset_simounao === "nao") {
-  desenharX(page2, 350, 470, rgb(0.18, 0.45, 0.71));
+  desenharX(page2, 269.3, 514.5, rgb(0.18, 0.45, 0.71), 6.5);
 }
 
 
