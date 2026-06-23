@@ -79,23 +79,33 @@ if (data) {
         color: rgb(0, 0, 0)
       });
     }
-//Configuração do sim ou nao no caso X 
+// Configuração do X
 function desenharX(
   pagina,
   x,
   y,
-  cor = rgb(0.75, 0.22, 0.17)
+  cor = rgb(0.75, 0.22, 0.17),
+  tamanho = 12
 ) {
   pagina.drawLine({
     start: { x, y },
-    end: { x: x + 12, y: y + 12 },
+    end: {
+      x: x + tamanho,
+      y: y + tamanho
+    },
     color: cor,
     thickness: 1.5
   });
 
   pagina.drawLine({
-    start: { x: x + 12, y },
-    end: { x, y: y + 12 },
+    start: {
+      x: x + tamanho,
+      y
+    },
+    end: {
+      x,
+      y: y + tamanho
+    },
     color: cor,
     thickness: 1.5
   });
@@ -151,27 +161,27 @@ page.drawText(dataBR || "", {
       color: rgb(0.18, 0.45, 0.71)
     });
 
-//POSIÇÂO X DO HEADSET
+// HEADSET x
 if (headset_simounao === "sim") {
   desenharX(page2, 300, 470, rgb(0.18, 0.45, 0.71));
-} else {
+} else if (headset_simounao === "nao") {
   desenharX(page2, 350, 470, rgb(0.18, 0.45, 0.71));
 }
 
-// POSIÇÂO X DO MONITOR 
+
+// MONITOR x
 if (monitor_sim === "sim") {
   desenharX(page2, 300, 330, rgb(0.18, 0.45, 0.71));
-} else {
-  desenharX(page2, 350, 330, rgb(0.18, 0.45, 0.71));
+} else if (monitor_sim === "nao") {
+  desenharX(page2, 350, 330, rgb(0.18, 0.45, 0.71), 5);
 }
 
-//POSIÇÂO X DO TECLADO
+// TECLADO x
 if (req.body.recebe_teclado === "sim") {
-  desenharX(page, 650, 90,rgb(0.18, 0.45, 0.71));
-} else {
-  desenharX(page, 700, 90,rgb(0.18, 0.45, 0.71));
+  desenharX(page, 609, 131.5, rgb(0.18, 0.45, 0.71), 6.5);
+} else if (req.body.recebe_teclado === "nao") {
+  desenharX(page, 660.4, 131.5, rgb(0.18, 0.45, 0.71), 6.5);
 }
-//POSIÇÂO X DO MONITOR
 
     // PDF FINAL
     const pdfFinal = await pdfDoc.save();

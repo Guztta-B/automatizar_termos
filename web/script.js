@@ -6,12 +6,13 @@ async function gerarPDF() {
     snheadset: document.getElementById("snheadset").value,
     snote: document.getElementById("snote").value,
     cpf: document.getElementById("cpf").value,
-    smonitor: document.getElementById("smonitor").value, //caso de B.O esse email estava diferente, email e depois quera paragrafo
-    emailColaborador:document.getElementById("emailColaborador").value,
-    emailResponsavel:document.getElementById("emailResponsavel").value,
-     monitor_sim: document.querySelector('input[name="monitor_sim"]:checked')?.value || " ",
-    headset_simounao: document.querySelector('input[name="recebe_headset"]:checked')?.value || "", //mudei o headset_simounao para recebe_headset
-      };
+    smonitor: document.getElementById("smonitor").value,
+    emailColaborador: document.getElementById("emailColaborador").value,
+    emailResponsavel: document.getElementById("emailResponsavel").value,
+    headset_simounao: document.querySelector('input[name="recebe_headset"]:checked')?.value || "",
+    monitor_sim:      document.querySelector('input[name="recebe_monitor"]:checked')?.value || "",
+    recebe_teclado:   document.querySelector('input[name="recebe_teclado"]:checked')?.value || "",
+  };
 
     //Aqui deve estar: https://termos-1gbi.onrender.com/gerar 
     //Para conectar servidor final, em caso de testes coloca
