@@ -112,14 +112,14 @@ function desenharX(
 }
     // DATA
 page.drawText(dataBR || "", {
-      x: 95,
-      y: 503,
+      x: 96,
+      y: 493.1,
       size: 10,
       font,
       color: rgb(0, 0, 0)
     });
     // NOME
-    escrever(nome, 205, 415, 12);
+    escrever(nome, 186.5, 404.6, 12);
 
 //MONITOR
     page2.drawText(smonitor || "", {
@@ -131,7 +131,7 @@ page.drawText(dataBR || "", {
     });
 
 // CPF
-    escrever(cpf, 170, 401, 12);
+    escrever(cpf, 168, 391, 12);
     
     // NOTEBOOK
      // alterei posição x caso o erro seja isso voltar para 662
