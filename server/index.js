@@ -163,17 +163,17 @@ page.drawText(dataBR || "", {
 
 // HEADSET x
 if (headset_simounao === "sim") {
-  desenharX(page2, 221.3, 514.5, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page2, 223.3, 514.5, rgb(0.18, 0.45, 0.71), 6.5);
 } else if (headset_simounao === "nao") {
-  desenharX(page2, 269.3, 514.5, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page2, 271.3, 514.5, rgb(0.18, 0.45, 0.71), 6.5);
 }
 
 
 // MONITOR x
 if (monitor_sim === "sim") {
-  desenharX(page2, 300, 330, rgb(0.18, 0.45, 0.71));
+  desenharX(page2, 228, 375, rgb(0.18, 0.45, 0.71), 6.5);
 } else if (monitor_sim === "nao") {
-  desenharX(page2, 350, 330, rgb(0.18, 0.45, 0.71), 5);
+  desenharX(page2, 270, 375, rgb(0.18, 0.45, 0.71), 6.5);
 }
 
 // TECLADO x
