@@ -112,32 +112,30 @@ function desenharX(
 }
     // DATA
 page.drawText(dataBR || "", {
-      x: 96,
-      y: 493.1,
+      x: 95,
+      y: 492,
       size: 10,
       font,
       color: rgb(0, 0, 0)
     });
     // NOME
-    escrever(nome, 186.5, 404.6, 12);
+    escrever(nome, 205, 404.6, 12);
 
 //MONITOR
     page2.drawText(smonitor || "", {
-      x: 230,
-      y: 333.5,
+      x: 225,
+      y: 305.5,
       size: 9,
       font,
       color: rgb(0.18, 0.45, 0.71)
     });
 
 // CPF
-    escrever(cpf, 168, 391, 12);
-    
-    // NOTEBOOK
+    escrever(cpf, 168, 390.7, 12);
      // alterei posição x caso o erro seja isso voltar para 662
     page.drawText(snote || "", {
-      x: 663.5,
-      y: 474.5,
+      x: 633.5,
+      y: 432.5,
       size: 9,
       font,
       color: rgb(0.18, 0.45, 0.71)
@@ -146,7 +144,7 @@ page.drawText(dataBR || "", {
     // TECLADO
     page.drawText(snteclado || "", {
       x: 635,
-      y: 89,
+      y: 80,
       size: 9,
       font,
       color: rgb(0.18, 0.45, 0.71)
@@ -155,7 +153,7 @@ page.drawText(dataBR || "", {
     // HEADSET - PÁGINA 2
     page2.drawText(snheadset || "", {
       x: 224,
-      y: 472,
+      y: 445,
       size: 9,
       font,
       color: rgb(0.18, 0.45, 0.71)
@@ -163,24 +161,24 @@ page.drawText(dataBR || "", {
 
 // HEADSET x
 if (headset_simounao === "sim") {
-  desenharX(page2, 223.3, 514.5, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page2, 225.3, 487.5, rgb(0.18, 0.45, 0.71), 6.5);
 } else if (headset_simounao === "nao") {
-  desenharX(page2, 271.3, 514.5, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page2, 271.3, 487.5, rgb(0.18, 0.45, 0.71), 6.5);
 }
 
 
 // MONITOR x
 if (monitor_sim === "sim") {
-  desenharX(page2, 228, 375, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page2, 224, 348, rgb(0.18, 0.45, 0.71), 6.5);
 } else if (monitor_sim === "nao") {
-  desenharX(page2, 270, 375, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page2, 267, 348, rgb(0.18, 0.45, 0.71), 6.5);
 }
 
 // TECLADO x
 if (req.body.recebe_teclado === "sim") {
-  desenharX(page, 609, 131.5, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page, 617.4, 122.5, rgb(0.18, 0.45, 0.71), 6.5);
 } else if (req.body.recebe_teclado === "nao") {
-  desenharX(page, 660.4, 131.5, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page, 664.4, 122.5, rgb(0.18, 0.45, 0.71), 6.5);
 }
 
     // PDF FINAL
