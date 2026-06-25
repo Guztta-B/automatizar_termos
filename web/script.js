@@ -12,6 +12,8 @@ async function gerarPDF() {
     headset_simounao: document.querySelector('input[name="recebe_headset"]:checked')?.value || "",
     monitor_sim:      document.querySelector('input[name="recebe_monitor"]:checked')?.value || "",
     recebe_teclado:   document.querySelector('input[name="recebe_teclado"]:checked')?.value || "",
+    recebe_mouse:     document.querySelector('input[name="recebe_mouse"]:checked')?.value || "",
+    snmouse: document.getElementById("snmouse").value
   };
 
     //Aqui deve estar: https://termos-1gbi.onrender.com/gerar 

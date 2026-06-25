@@ -16,12 +16,13 @@ app.post("/gerar", async (req, res) => {
       nome,
       cpf,
       snteclado,
+      snmouse,
       snheadset,
       smonitor,
       snote,
       headset_simounao,
       monitor_sim,
-      headset_sim
+      headset_sim,
     } = req.body;
 
 
@@ -141,10 +142,21 @@ page.drawText(dataBR || "", {
       color: rgb(0.18, 0.45, 0.71)
     });
 
+
+ // mouse
+    page.drawText(snmouse || "", {
+      x: 635,
+      y: 80,
+      size: 9,
+      font,
+      color: rgb(0.18, 0.45, 0.71)
+    });
+
+
     // TECLADO
     page.drawText(snteclado || "", {
       x: 635,
-      y: 80,
+      y: 155.5,
       size: 9,
       font,
       color: rgb(0.18, 0.45, 0.71)
@@ -174,12 +186,24 @@ if (monitor_sim === "sim") {
   desenharX(page2, 267, 348, rgb(0.18, 0.45, 0.71), 6.5);
 }
 
+
+//MOUSE x
+if (req.body.recebe_mouse === "sim") {
+   desenharX(page, 617.4, 122.5, rgb(0.18, 0.45, 0.71), 6.5);
+} else if (req.body.recebe_mouse === "nao") {
+  desenharX(page, 664.4, 122.55, rgb(0.18, 0.45, 0.71), 6.5);
+}
+
+
 // TECLADO x
 if (req.body.recebe_teclado === "sim") {
-  desenharX(page, 617.4, 122.5, rgb(0.18, 0.45, 0.71), 6.5);
+  desenharX(page, 617.4, 197, rgb(0.18, 0.45, 0.71), 6.5);
 } else if (req.body.recebe_teclado === "nao") {
-  desenharX(page, 664.4, 122.5, rgb(0.18, 0.45, 0.71), 6.5);
-}
+  desenharX(page, 657, 197, rgb(0.18, 0.45, 0.71), 6.5);
+}  
+
+
+
 
     // PDF FINAL
     const pdfFinal = await pdfDoc.save();
