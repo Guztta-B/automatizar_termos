@@ -120,7 +120,7 @@ page.drawText(dataBR || "", {
       color: rgb(0, 0, 0)
     });
     // NOME
-    escrever(nome, 205, 404.6, 12);
+    escrever(nome, 187, 404.6, 12);
 
 //MONITOR
     page2.drawText(smonitor || "", {
@@ -134,9 +134,10 @@ page.drawText(dataBR || "", {
 // CPF
     escrever(cpf, 168, 390.7, 12);
      // alterei posição x caso o erro seja isso voltar para 662
-    page.drawText(snote || "", {
-      x: 633.5,
-      y: 432.5,
+//NOTE 
+     page.drawText(snote || "", {
+      x: 663.5,
+      y: 465.5,
       size: 9,
       font,
       color: rgb(0.18, 0.45, 0.71)
