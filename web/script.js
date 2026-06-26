@@ -19,7 +19,7 @@ async function gerarPDF() {
     //Aqui deve estar: https://termos-1gbi.onrender.com/gerar 
     //Para conectar servidor final, em caso de testes coloca
     //http://localhost:3000/gerar
-  const resposta = await fetch("http://localhost:3000/gerar", {
+  const resposta = await fetch("https://termos-1gbi.onrender.com/gerar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
